@@ -6,3 +6,4 @@ export const DAYSOFWEEK = ['L','M','X','J','V','S','D'];
 //     CHANGEDATE:2
 // }
 newFunction();
+
