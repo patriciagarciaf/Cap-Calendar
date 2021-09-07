@@ -14,7 +14,7 @@ class PubSub{
     on(chanel, handler){
         const suscriptorsChanel=this._suscriptors.get(chanel);
         if(!suscriptorsChanel){
-            suscriptorsChanel=[handle];
+            suscriptorsChanel=[handler];
             this._suscriptors.set(suscriptorsChanel);
         } else {
             suscriptorsChanel.push(handler);
