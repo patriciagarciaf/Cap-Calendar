@@ -1,18 +1,19 @@
-import {PubSub} from './PubSub.js';
+import pubSub from './PubSub.js';
 import {timerInterface} from './TimerInterface.js';
 import {CHANNELS} from './Config.js';
 import {INTERVAL} from './Config.js';
+
 class TimerService{
-    constructor(pubSub){
+    constructor(pubSub,timerInterface){
         this._pubSub = pubSub;
         this._timerInterface = timerInterface;
-        this._intervalId = this._timerInterface.setInterval(INTERVAL, ()=> {
+        this._intervalId = this._timerInterface.setInterval(()=> {
             const date = new Date();
             this._pubSub.emit(CHANNELS.CHANGEDATE, date);
-        });
+        },INTERVAL);
     }
     dispose(){
         this._timerInterface.clearInterval(this._intervalId);
     }
 }
-export default new TimerService(new PubSub(), timerInterface);
+export default new TimerService(pubSub, timerInterface);
