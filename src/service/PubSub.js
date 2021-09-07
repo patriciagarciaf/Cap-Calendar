@@ -1,12 +1,35 @@
 class PubSub{
-    emit(chanel,data){
 
+    constructor(){
+        this._suscriptors= new Map();
     }
+    emit(chanel,data){
+       const suscriptorsChanel = this._suscriptors.get(chanel);
+       if(suscriptorsChanel){
+           suscriptorsChanel.forEach(suscriptor => {
+               suscriptor(data);
+           });
+       }
+   }
     on(chanel, handler){
-        return ()=>{}
-    }
+        const suscriptorsChanel=this._suscriptors.get(chanel);
+        if(!suscriptorsChanel){
+            suscriptorsChanel=[handle];
+            this._suscriptors.set(suscriptorsChanel);
+        } else {
+            suscriptorsChanel.push(handler);
+        }
+       return ()=>{
+           const index=suscriptorsChanel.indexOf(handler);
+           if(index>-1){
+               if(suscriptorsChanel.length===0){
+                   this._suscriptors.delete(chanel);
+               }
+           }
+       }
+   }
 }
 
-pubsub=new PubSub(); 
-dispose=pubsub.on("cambio de dia", (date)=>{})
-dispose();
+export default pubsub=new PubSub(); 
+// dispose=pubsub.on("cambio de dia", (date)=>{})
+// dispose();
