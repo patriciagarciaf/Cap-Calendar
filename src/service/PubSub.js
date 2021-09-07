@@ -30,6 +30,6 @@ class PubSub{
    }
 }
 
-export default pubsub=new PubSub(); 
+export default new PubSub(); 
 // dispose=pubsub.on("cambio de dia", (date)=>{})
 // dispose();
