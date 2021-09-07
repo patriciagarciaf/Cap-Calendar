@@ -1,11 +1,12 @@
-class DateService{
-    getMonthDays(date){
-        return [ ];
+class DateService {
+    static getMonthDays(date) {
+        return [];
     }
 
-    addMonth(date, diff){
+    static addMonth(date, diff) {
 
     }
+
 
     timer();
 daysWeek();
@@ -22,4 +23,11 @@ daysWeek(){
 			return DAYSOFWEEK[i] + "  ";
 		}
 }
+
+    static isToday(date, today) {
+        return date.getDate() === today.getDate() &&
+            date.getMonth() === today.getMonth() &&
+            date.getFullYear() == today.getFullYear()
+    }
+
 }
