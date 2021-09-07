@@ -22,6 +22,7 @@ class PubSub{
        return ()=>{
            const index=suscriptorsChanel.indexOf(handler);
            if(index>-1){
+               suscriptorsChanel.splice(index,1);
                if(suscriptorsChanel.length===0){
                    this._suscriptors.delete(chanel);
                }
