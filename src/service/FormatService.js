@@ -11,4 +11,14 @@ class FormatService{
         });
         return formatter.format(date);
     }
+
+    static getDate(date){
+        const formatter = new Intl.DateTimeFormat('es-ES',{dateStyle: 'full'});
+        return formatter.format(date);
+    }
+
+    static getMonth(date){
+        const formatter = new Intl.DateTimeFormat('es-ES',{year: 'numeric', month: 'long'});
+        return formatter.format(date);
+    }
 }
