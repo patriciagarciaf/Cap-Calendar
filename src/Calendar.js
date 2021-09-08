@@ -1,9 +1,9 @@
 const css = `:host{
-    background-color: var(--calendarbgcolor,red);
+    background-color: var(--calendarbgcolor, beige);
     display: grid;
     gap: 8px;
     grid-template-columns: repeat(7,25px);
-    color: var(--calendarcolor,blue);
+    color: var(--calendarcolor, black);
   }
  `
 

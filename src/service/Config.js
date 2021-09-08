@@ -5,5 +5,5 @@ export const CHANNEL= {
     CHANGEMONTH: 1,
     CHANGEDATE:2
 }
-newFunction();
+
 
