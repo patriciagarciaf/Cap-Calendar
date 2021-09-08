@@ -4,11 +4,9 @@ class PubSub{
         this._suscriptors= new Map();
     }
     emit(chanel,data){
-       const suscriptorsChanel = this._suscriptors.get(chanel);
+       let suscriptorsChanel = this._suscriptors.get(chanel);
        if(suscriptorsChanel){
-           suscriptorsChanel.forEach(suscriptor => {
-               suscriptor(data);
-           });
+           suscriptorsChanel.forEach(f => f(data));
        }
    }
     on(chanel, handler){
