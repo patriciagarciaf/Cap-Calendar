@@ -1,10 +1,10 @@
-class PubSub{
+export class PubSub{
 
     constructor(){
         this._suscriptors= new Map();
     }
     emit(chanel,data){
-       let suscriptorsChanel = this._suscriptors.get(chanel);
+       const suscriptorsChanel = this._suscriptors.get(chanel);
        if(suscriptorsChanel){
            suscriptorsChanel.forEach(f => f(data));
        }
@@ -13,7 +13,7 @@ class PubSub{
         let suscriptorsChanel=this._suscriptors.get(chanel);
         if(!suscriptorsChanel){
             suscriptorsChanel=[handler];
-            this._suscriptors.set(suscriptorsChanel);
+            this._suscriptors.set(chanel, suscriptorsChanel);
         } else {
             suscriptorsChanel.push(handler);
         }
