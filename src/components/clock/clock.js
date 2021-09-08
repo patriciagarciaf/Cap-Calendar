@@ -2,10 +2,8 @@ import { FormatService } from '../../service/FormatService.js'
 import pubSub from '../../service/PubSub.js'
 import { CHANELS } from '../../service/Config.js'
 
-const css = `div{
-    background-color: var(--bgcolor,rgb(43,43,44));
+const css = `:host{
     font-size: 3em;
-    color: var(--fontcolor,white);
   }
  `
 
@@ -30,10 +28,8 @@ export class Clock extends HTMLElement{
         this._disposables=[];
     }
     _create(){
-        let div= document.createElement('div');
         let text = document.createTextNode(this._formatDate());
-        div.appendChild(text);
-        this._shadow.appendChild(div);
+        this._shadow.appendChild(text);
         return text;
     }
     _update(node,date){
