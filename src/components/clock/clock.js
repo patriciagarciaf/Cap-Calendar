@@ -15,6 +15,7 @@ export class Clock extends HTMLElement{
         this._disposables.push(disposable);
     }
     disconnectedCallback(){
+        this._shadow.textContent = "";
         this._disposables=[];
     }
     _create(){
