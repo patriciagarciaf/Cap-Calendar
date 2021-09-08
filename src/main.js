@@ -1,2 +1,2 @@
 import './service/TimerService.js';
-import './components/Calendar.js'
+import './components/component.js'

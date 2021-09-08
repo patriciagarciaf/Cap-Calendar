@@ -1,4 +1,4 @@
-class DateService {
+export class DateService {
     static getMonthDays(date) {
         return [];
     }
@@ -8,8 +8,8 @@ class DateService {
     }
 
 
-    timer();
-daysWeek();
+    // timer();
+    // daysWeek();
 
 timer(date){
 
