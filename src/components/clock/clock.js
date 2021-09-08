@@ -2,12 +2,23 @@ import { FormatService } from '../../service/FormatService.js'
 import pubSub from '../../service/PubSub.js'
 import { CHANELS } from '../../service/Config.js'
 
+const css = `div{
+    background-color: var(--bgcolor,rgb(43,43,44));
+    font-size: 3em;
+    color: var(--fontcolor,white);
+  }
+ `
+
 export class Clock extends HTMLElement{
     constructor() {
         super();
         this._disposables=[];
         this._date = new Date();
         this._shadow = this.attachShadow({mode: "open"})
+
+        const style = document.createElement("style");
+        style.textContent = css;
+        this._shadow.appendChild(style);
     }
     connectedCallback(){
         const text = this._create();
