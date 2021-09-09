@@ -1,6 +1,6 @@
 import { FormatService } from '../../service/FormatService.js'
 import pubSub from '../../service/PubSub.js'
-import { CHANELS } from '../../service/Config.js'
+import { CHANNEL } from '../../service/Config.js'
 import css from './clock.css.js'
 
 export class Clock extends HTMLElement{
@@ -13,7 +13,7 @@ export class Clock extends HTMLElement{
     }
     connectedCallback(){
         const text = this._create();
-        const disposable = pubSub.on(CHANELS.CHANGEDATE, (date) => this._update(text,date));
+        const disposable = pubSub.on(CHANNEL.CHANGEDATE, (date) => this._update(text,date));
         this._disposables.push(disposable);
     }
     disconnectedCallback(){
