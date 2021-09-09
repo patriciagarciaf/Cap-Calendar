@@ -1,6 +1,6 @@
 import pubSub from './PubSub.js';
 import {timerInterface} from './TimerInterface.js';
-import {CHANELS} from './Config.js';
+import {CHANNELS} from './Config.js';
 import {INTERVAL} from './Config.js';
 
 class TimerService{
@@ -11,7 +11,7 @@ class TimerService{
         this._timerInterface = timerInterface;
         this._intervalId = this._timerInterface.setInterval(()=> {
             const date = new Date();
-            this._pubSub.emit(CHANELS.CHANGEDATE, date);
+            this._pubSub.emit(CHANNELS.CHANGEDATE, date);
         },INTERVAL);
     }
     dispose(){

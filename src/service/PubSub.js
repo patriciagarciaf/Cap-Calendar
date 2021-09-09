@@ -12,8 +12,7 @@ export class PubSub{
    }
     on(chanel, handler){
 
-
-        const suscriptorsChanel=this._suscriptors.get(chanel);
+        //const suscriptorsChanel=this._suscriptors.get(chanel);
 
         let suscriptorsChanel=this._suscriptors.get(chanel);
 
@@ -27,9 +26,6 @@ export class PubSub{
        return ()=>{
            const index=suscriptorsChanel.indexOf(handler);
            if(index>-1){
-
-
-
                suscriptorsChanel.splice(index,1);
 
                if(suscriptorsChanel.length===0){
@@ -39,8 +35,6 @@ export class PubSub{
        }
    }
 }
-
-
 export default new PubSub(); 
 
 

@@ -1,5 +1,6 @@
-import pubSub from "../service/PubSub.js";
-import { CHANNEL } from "../service/Config.js";
+import pubSub from "../../service/PubSub.js";
+import { CHANNELS } from "../../service/Config.js";
+import css from "./ButtonsStyle.css.js"
 
 const BUTTON = Object.freeze({
     UP: 1,
@@ -20,10 +21,13 @@ export class CalendarButton extends HTMLElement {
     }
     _handlerClick(ev){
         ev.stopPropagation();
-        pubSub.emit(CHANNEL.CHANGEMONTH, this.action);
+        pubSub.emit(CHANNELS.CHANGEMONTH, this.action);
     }
     connectedCallback(){
         this.addEventListener("click", this._handlerClick);
+        let button = document.createElement("button");
+        this.appendChild(button);
+        button.appendChild(document.createTextNode("botones"));
     }
     disconnectedCallback(){
         this.removeEventListener("click", this._handlerClick);
@@ -39,6 +43,10 @@ export class CalendarButton extends HTMLElement {
         this.action = action;
     }
     static get observedAttributes() { return ['action']; }
+
+    _getStyle(){
+        this._shadow.adoptedStyleSheets = [css];
+    }
 }
 
 customElements.define("cap-button", CalendarButton);

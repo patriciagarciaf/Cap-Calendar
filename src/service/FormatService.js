@@ -1,8 +1,5 @@
 import {DateService} from './DateService.js'
-
-class FormatService{
     
-
 export class FormatService{
 
     static getTime(date){
