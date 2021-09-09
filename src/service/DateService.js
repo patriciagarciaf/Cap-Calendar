@@ -1,8 +1,12 @@
+
 class DateService {
 
     constructor(){
         this._button = document.getElementsByName("");
     }
+
+
+export class DateService {
 
     static getMonthDays(date) {
         return [];
@@ -14,6 +18,7 @@ class DateService {
         date.setMonth(date.getMonth() + diff)
         returnDateService.getDayOfMonth(date);
     }
+
 
     static isToday(date, today) {
         return date.getDate() === today.getDate() &&
