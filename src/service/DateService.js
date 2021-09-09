@@ -1,9 +1,18 @@
 class DateService {
+
+    constructor(){
+        this._button = document.getElementsByName("");
+    }
+
     static getMonthDays(date) {
         return [];
     }
+
+
     static addMonth(date, diff) {
 
+        date.setMonth(date.getMonth() + diff)
+        returnDateService.getDayOfMonth(date);
     }
 
     static isToday(date, today) {

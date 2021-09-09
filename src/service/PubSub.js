@@ -1,9 +1,10 @@
-class PubSub{
+export class PubSub{
 
     constructor(){
         this._suscriptors= new Map();
     }
     emit(chanel,data){
+
        const suscriptorsChanel = this._suscriptors.get(chanel);
        if(suscriptorsChanel){
            suscriptorsChanel.forEach(suscriptor => {
@@ -12,8 +13,10 @@ class PubSub{
        }
    }
     on(chanel, handler){
+
         const suscriptorsChanel=this._suscriptors.get(chanel);
         if(!suscriptorsChanel){
+
             suscriptorsChanel=[handler];
             this._suscriptors.set(suscriptorsChanel);
         } else {
@@ -22,6 +25,7 @@ class PubSub{
        return ()=>{
            const index=suscriptorsChanel.indexOf(handler);
            if(index>-1){
+
                if(suscriptorsChanel.length===0){
                    this._suscriptors.delete(chanel);
                }
@@ -30,6 +34,4 @@ class PubSub{
    }
 }
 
-export default pubsub=new PubSub(); 
-// dispose=pubsub.on("cambio de dia", (date)=>{})
-// dispose();
+export default new PubSub(); 
