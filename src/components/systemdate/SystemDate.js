@@ -1,38 +1,20 @@
-import { FormatService } from "../service/FormatService.js";
-import { DateService } from "../service/DateService.js";
-import PubSub from "../service/PubSub.js";
-import { CHANNELS } from "../service/Config.js";
-import PubSub from "../../service/PubSub.js";
+import { FormatService } from "../../service/FormatService.js";
+import { DateService } from "../../service/DateService.js";
+import { BaseDateComponent } from "../basedatecomponent.js";
+import css from "./systemDate.css.js"
 
-class SystemDate extends HTMLElement{
-
-    constructor(){
-        super();
-        this._text = null;
-        this.date = new Date();
+export class SystemDate extends BaseDateComponent{
+    _changeDate(value) {
+        return !this.date || !DateService.isToday(value, this._oldDate);
     }
 
-    connectedCallback(){
-        this._dispose = PubSub.on(CHANNELS.CHANGEDATE, (date) => {
-            this.date = date;
-
-            if(!DateService.isToday(date, new Date())){
-                this._text.data = FormatService.getDate(this.date);
-            }
-        })
-
-        const shadow = this.attachShadow({mode: "closed"});
-        this._text = document.createTextNode(FormatService.getDate(this.date));
-        const div = document.createElement("div");
-        div.appendChild(this._text);
-        shadow.appendChild(div);
+    _formatDate() {
+        return FormatService.getDate(this.date);
     }
 
-    disconnectedCallback(){
-        this._dispose();
+    _getStyle() {
+        this._shadow.adoptedStyleSheets = [css];
     }
 }
 
 customElements.define('cap-system-date', SystemDate);
-export {SystemDate}
-
