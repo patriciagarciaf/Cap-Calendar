@@ -5,5 +5,3 @@ export const CHANELS= {
     CHANGEMONTH: 1,
     CHANGESELECTEDDAY:2
 }
-
-

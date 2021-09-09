@@ -4,7 +4,9 @@ import {CHANELS} from './Config.js';
 import {INTERVAL} from './Config.js';
 
 class TimerService{
+
     constructor(pubSub,timerInterface){
+        
         this._pubSub = pubSub;
         this._timerInterface = timerInterface;
         this._intervalId = this._timerInterface.setInterval(()=> {
