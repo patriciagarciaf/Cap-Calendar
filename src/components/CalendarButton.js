@@ -1,5 +1,5 @@
 import pubSub from "../service/PubSub.js";
-import { CHANNEL } from "../service/Config.js";
+import { CHANNELS } from "../service/Config.js";
 
 const BUTTON = Object.freeze({
     UP: 1,
@@ -20,7 +20,7 @@ export class CalendarButton extends HTMLElement {
     }
     _handlerClick(ev){
         ev.stopPropagation();
-        pubSub.emit(CHANNEL.CHANGEMONTH, this.action);
+        pubSub.emit(CHANNELS.CHANGEMONTH, this.action);
     }
     connectedCallback(){
         this.addEventListener("click", this._handlerClick);
