@@ -1,11 +1,7 @@
 import { FormatService } from '../../service/FormatService.js'
 import pubSub from '../../service/PubSub.js'
 import { CHANELS } from '../../service/Config.js'
-
-const css = `:host{
-    font-size: 3em;
-  }
- `
+import css from './clock.css.js'
 
 export class Clock extends HTMLElement{
     constructor() {
@@ -14,9 +10,6 @@ export class Clock extends HTMLElement{
         this._date = new Date();
         this._shadow = this.attachShadow({mode: "open"})
 
-        const style = document.createElement("style");
-        style.textContent = css;
-        this._shadow.appendChild(style);
     }
     connectedCallback(){
         const text = this._create();
@@ -29,6 +22,10 @@ export class Clock extends HTMLElement{
     }
     _create(){
         let text = document.createTextNode(this._formatDate());
+        const style = this._getStyle();
+        if (style) {
+            this._shadow.appendChild(style);
+        }
         this._shadow.appendChild(text);
         return text;
     }
@@ -38,6 +35,9 @@ export class Clock extends HTMLElement{
     }
     _formatDate(){
         return FormatService.getTime(this._date)
+    }
+    _getStyle(){
+        this._shadow.adoptedStyleSheets = [css];
     }
 }
 customElements.define("cap-clock", Clock);
