@@ -1,6 +1,7 @@
 import PubSub from '../service/PubSub.js'
 import {CHANNELS} from '../service/Config.js'
 const METHOD_NOT_IMPLEMENTED='Method not implemented'
+import css from './baseDateComponent.css.js'
 
 export class BaseDateComponent extends HTMLElement{
 
@@ -36,20 +37,23 @@ export class BaseDateComponent extends HTMLElement{
         })
         this._disposables=[];
     }
-    _getStyle(){
+    _setStyle(){
         throw METHOD_NOT_IMPLEMENTED;
+    }
+    _isThereStyle(){
+        return true;
     }
     _changeDate(value){
         throw METHOD_NOT_IMPLEMENTED;
     }
     _create(){
-        this._text=document.createTextNode("");
-        this._shadow=this.attachShadow({ mode: "open" });
-        const style=this._getStyle();
-        if (style){
-            this._shadow.appendChild(style);
+        this._text = document.createTextNode("");
+        this._shadow = this.attachShadow({mode: "open"});
+        this._shadow.adoptedStyleSheets = [css];
+        if(this._isThereStyle()){
+            this._setStyle();
+            this._shadow.appendChild(this._text);
         }
-        this._shadow.appendChild(this._text);
     }
     _update(){
         this._text.data = this._formatDate();
