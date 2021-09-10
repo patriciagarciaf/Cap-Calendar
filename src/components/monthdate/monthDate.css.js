@@ -5,10 +5,10 @@ sheet.replace(`
     background-color: var(--backgroundcolor);
     font-family: var(--font);
     font-size: 1.2rem;
-    display: inline;
+    display: flex;
 }
 :host(:hover) {
-    color: white;
+    color: rgb(144,178,204);
 }
 `);
 export default sheet;

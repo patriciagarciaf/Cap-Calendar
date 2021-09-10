@@ -4,7 +4,8 @@ sheet.replace(`
     background-color: var(--backgroundcolor);
     color: var(--textcolor);
     font-size: 3em;
-    font-family: var(--font)
+    font-family: var(--font);
+    display: block;
 }
 `);
 export default sheet;
