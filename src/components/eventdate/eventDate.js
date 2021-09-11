@@ -1,7 +1,7 @@
 import { FormatService } from "../../service/FormatService.js"
 import { BaseDateComponent } from "../basedatecomponent.js"
 import { CHANNELS } from '../../service/Config.js'
-import css from './eventDate.css.js'
+import sheet from './eventDate.css.js'
 
 class EventDate extends BaseDateComponent {
 
@@ -16,8 +16,8 @@ class EventDate extends BaseDateComponent {
     _formatDate() {
         return FormatService.getSelectedDate(this.date);
     }
-    _getStyle(){
-        this._shadow.adoptedStyleSheets = [css];
+    _setStyle(){
+        this._shadow.adoptedStyleSheets = [...this._shadow.adoptedStyleSheets, sheet];
     }
 
 }
