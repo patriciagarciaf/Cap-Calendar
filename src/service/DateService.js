@@ -11,6 +11,10 @@ export class DateService {
         date.setMonth(date.getMonth() + diff)
         returnDateService.getDayOfMonth(date);
     }
+    static isThisMonth(date, today) {
+        return date.getMonth() === today.getMonth() &&
+            date.getFullYear() == today.getFullYear()
+    }
     static isToday(date, today) {
         return date.getDate() === today.getDate() &&
             date.getMonth() === today.getMonth() &&
