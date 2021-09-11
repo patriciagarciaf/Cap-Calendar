@@ -1,15 +1,13 @@
-const css = `:host{
-    background-color: var(--calendarbgcolor,red);
-    display: grid;
-    gap: 8px;
-    grid-template-columns: repeat(7,25px);
-    color: var(--calendarcolor,blue);
-  }
- `
+import sheet from './Calendar.css.js'
+import {Clock} from '../clock/clock.js'
+import { MonthDate } from '../monthdate/monthDate.js'
+import { SystemDate } from '../systemdate/SystemDate.js'
+import { DaysOfWeek } from '../daysOfWeek/daysOfWeek.js'
 
 class Calendar extends HTMLElement{
     constructor(){
         super();
+
         this._shadow = this.attachShadow({mode:"closed"})
     }
     connectedCallback(){
