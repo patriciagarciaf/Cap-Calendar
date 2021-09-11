@@ -1,5 +1,5 @@
 import { FormatService } from "../../service/FormatService.js"
-import { BaseDateComponent } from "../basedatecomponent.js"
+import { BaseDateComponent } from "../baseDateComponent/basedatecomponent.js"
 import { CHANNELS } from '../../service/Config.js'
 import sheet from './eventDate.css.js'
 
