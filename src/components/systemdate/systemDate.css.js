@@ -1,10 +1,7 @@
 const sheet = new CSSStyleSheet();
 sheet.replace(`
 :host {
-    background-color: var(--backgroundcolor);
-    color: var(--textcolor);
-    font-family: var(--font);
-    
+    font-family: 1em;
 }
 `);
 export default sheet;

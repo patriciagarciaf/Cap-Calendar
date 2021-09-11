@@ -12,8 +12,8 @@ export class SystemDate extends BaseDateComponent{
         return FormatService.getDate(this.date);
     }
 
-    _getStyle() {
-        this._shadow.adoptedStyleSheets = [css];
+    _setStyle() {
+        this._shadow.adoptedStyleSheets = [...this._shadow.adoptedStyleSheets, css];
     }
 }
 
