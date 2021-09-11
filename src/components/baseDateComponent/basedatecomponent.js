@@ -1,5 +1,5 @@
-import PubSub from '../service/PubSub.js'
-import {CHANNELS} from '../service/Config.js'
+import PubSub from '../../service/PubSub.js'
+import {CHANNELS} from '../../service/Config.js'
 const METHOD_NOT_IMPLEMENTED='Method not implemented'
 import css from './baseDateComponent.css.js'
 

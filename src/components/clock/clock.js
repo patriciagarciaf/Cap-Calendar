@@ -1,6 +1,6 @@
 import { FormatService } from '../../service/FormatService.js'
 import sheet from './clock.css.js'
-import { BaseDateComponent } from '../basedatecomponent.js'
+import { BaseDateComponent } from '../baseDateComponent/basedatecomponent.js'
 
 export class Clock extends BaseDateComponent{
 

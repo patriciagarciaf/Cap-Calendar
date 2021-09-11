@@ -1,5 +1,5 @@
-import pubSub from "../service/PubSub.js";
-import { CHANNELS } from "../service/Config.js";
+import pubSub from "../../service/PubSub.js";
+import { CHANNELS } from "../../service/Config.js";
 
 const BUTTON = Object.freeze({
     UP: 1,

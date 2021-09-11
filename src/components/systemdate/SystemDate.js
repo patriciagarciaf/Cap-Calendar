@@ -1,6 +1,6 @@
 import { FormatService } from "../../service/FormatService.js";
 import { DateService } from "../../service/DateService.js";
-import { BaseDateComponent } from "../basedatecomponent.js";
+import { BaseDateComponent } from "../baseDateComponent/basedatecomponent.js";
 import css from "./systemDate.css.js"
 
 export class SystemDate extends BaseDateComponent{
