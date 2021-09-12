@@ -1,9 +1,7 @@
 const sheet = new CSSStyleSheet();
 sheet.replace(`:host{
-                    border-bottom: 0.05em solid blue;
-                    color: blue;
-                    background-color: black;
-                    font-family: sans-serif;
+                    border-bottom: 0.05em solid white;
+                    font-size: 1.2em;
                     display: grid;
                     padding: 1em 2em;
                     gap: 0.8em 2em;
@@ -12,13 +10,13 @@ sheet.replace(`:host{
                     cursor: default;
                 }
                 :host .isNotMonth{
-                    color: grey;
+                    color: darkgrey;
                 }
                 :host .isToday{
-                    background-color:rgb(127, 178, 240);
+                    background-color:lightblue;
                 }
                 :host .selected{
-                    border-color: white;
+                    border-color: black;
                 }`
     );
 export default sheet;

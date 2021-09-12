@@ -27,4 +27,8 @@ export class FormatService{
         const formatter = new Intl.DateTimeFormat('es-ES',{weekday:'long', day:'numeric'});
         return DateService.isToday(date,new Date()) ? "Today": formatter.format(date);
     }
+    static getDay(date){
+        var options = {day:'numeric'};
+        return new Intl.DateTimeFormat('es-ES',options).format(date);
+    }
 }

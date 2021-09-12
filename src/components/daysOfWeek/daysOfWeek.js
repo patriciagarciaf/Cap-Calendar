@@ -1,5 +1,4 @@
 import { DAYSOFWEEK } from "../../service/Config.js";
-import { BaseDateComponent } from "../baseDateComponent/basedatecomponent.js";
 import css from './daysOfWeek.css.js'
 import cssBase from '../baseDateComponent/baseDateComponent.css.js'
 

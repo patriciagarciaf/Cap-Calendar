@@ -3,6 +3,8 @@ import { FormatService } from "../../service/FormatService.js";
 import {CHANNELS} from "../../service/Config.js";
 import pubSub from "../../service/PubSub.js";
 import css from "./Calendar.css.js";
+import cssBase from '../baseDateComponent/baseDateComponent.css.js'
+
 
 export class Calendar extends HTMLElement{
     constructor(){
@@ -13,7 +15,7 @@ export class Calendar extends HTMLElement{
 
     }
     _formatDate (date){
-        return FormatService.getDate(date);
+        return FormatService.getDay(date);
     }
 
     connectedCallback(){
@@ -61,7 +63,7 @@ export class Calendar extends HTMLElement{
                 div.classList.add("isToday");
             }
             this._shadow.appendChild(div);
-            this._shadow.adoptedStyleSheets = [css];
+            this._shadow.adoptedStyleSheets = [cssBase, css];
         })
     }
 

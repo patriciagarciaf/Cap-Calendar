@@ -4,8 +4,8 @@ sheet.replace( `
     display: grid;
     gap:2em;
     grid-template-columns:repeat(7,1em);
-    padding-left: 1.2em;
+    padding: 1em 2em;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.2em;
 }`)
 export default sheet

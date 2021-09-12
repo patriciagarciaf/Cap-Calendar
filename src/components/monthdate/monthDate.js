@@ -17,7 +17,7 @@ export class MonthDate extends BaseDateComponent{
     }
 
     // connectedCallback() {
-    //     const texto = super._create()
+    //     const texto = super._create();
     //     const disposableDate = pubSub.on(CHANNELS.CHANGEDATE, (date) => {
     //          if (!DateService.isThisMonth(date, new Date())) {
     //              super._update(texto,date)
