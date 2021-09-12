@@ -16,6 +16,9 @@ export class CalendarButton extends HTMLElement {
         this.action = BUTTON.UP;
         this._shadow = this.attachShadow({mode: "open"});
     }
+    static get observedAttributes() {
+        return ['action'];
+      }
     get action() {
         return this._action;
     }

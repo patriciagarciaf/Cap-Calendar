@@ -10,6 +10,9 @@ sheet.replace(`
     border-color: transparent;
     height: 100%;
 }
+:host > button:hover{
+    color: lightblue;
+}
 :host > button[action="1"]{
 }
 :host > button[action="-1"]{
