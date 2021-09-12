@@ -6,6 +6,7 @@ sheet.replace(`
     font-size: 2em;
     font-family: sans-serif;
     display:block;
+    padding: 1rem 1rem 0;
 }
 `);
 export default sheet;

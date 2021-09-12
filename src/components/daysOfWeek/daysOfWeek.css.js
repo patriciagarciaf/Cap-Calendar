@@ -6,5 +6,6 @@ sheet.replace( `
     grid-template-columns:repeat(7,1em);
     padding-left: 1.2em;
     text-align: center;
+    font-size: 1em;
 }`)
 export default sheet

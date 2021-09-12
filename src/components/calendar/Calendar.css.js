@@ -1,8 +1,8 @@
 const sheet = new CSSStyleSheet();
 sheet.replace(`:host{
                     border-bottom: 0.05em solid blue;
-                    color: white;
-                    background-color: rgb(70, 70, 70);
+                    color: blue;
+                    background-color: black;
                     font-family: sans-serif;
                     display: grid;
                     padding: 1em 2em;
