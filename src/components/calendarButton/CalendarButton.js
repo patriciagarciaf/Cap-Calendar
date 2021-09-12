@@ -1,4 +1,4 @@
-import pubSub from "../../service/PubSub.js";
+/*import pubSub from "../../service/PubSub.js";
 import { CHANNELS } from "../../service/Config.js";
 
 const BUTTON = Object.freeze({
@@ -42,4 +42,4 @@ export class CalendarButton extends HTMLElement {
 }
 
 customElements.define("cap-button", CalendarButton);
-
+*/

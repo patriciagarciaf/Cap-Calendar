@@ -3,7 +3,7 @@ const sheet = new CSSStyleSheet();
 sheet.replace(`
 :host{​​​​​​
     padding-right: 0.3em;
-    background-color: rgb(70,70,70);
+    background-color: rgb(248, 206, 206);
 }​​​​​​
 :host >  button{​​​​​​
     color: white;
@@ -16,6 +16,6 @@ sheet.replace(`
 :host > button[action="-1"]{​​​​​​
     transform: rotate(180deg);
 }​​​​​​
-`)
-export default sheet
+`);
+export default sheet;
 
