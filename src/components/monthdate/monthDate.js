@@ -1,7 +1,7 @@
 import { FormatService } from "../../service/FormatService.js";
 import { DateService } from "../../service/DateService.js";
 import { BaseDateComponent } from "../baseDateComponent/basedatecomponent.js";
-import sheet from "./monthDate.css.js"
+import css from "./monthDate.css.js"
 
 export class MonthDate extends BaseDateComponent{
     constructor() {
@@ -24,6 +24,16 @@ export class MonthDate extends BaseDateComponent{
             super._update(texto,newDate)
         })
         this._disposables.push(disposableDate, disposableMonth);
+    }
+    _setStyle() {
+        this._shadow.adoptedStyleSheets = [...this._shadow.adoptedStyleSheets, css];
+    }
+    _formatDate() {
+        return FormatService.getMonth(this.date);
+    }
+
+    _changeDate(value) {
+        return !this.date || !DateService.isThisMonth(value, this._oldDate);
     }
 }
 
