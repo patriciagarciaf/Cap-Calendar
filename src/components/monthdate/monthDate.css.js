@@ -7,5 +7,8 @@ sheet.replace(`
     display: inline-block;
     width: 14em;
 }
+:host(:hover) {
+    color: lightblue;
+}
 `);
 export default sheet;
