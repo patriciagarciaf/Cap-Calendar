@@ -1,5 +1,5 @@
 const sheet = new CSSStyleSheet();
-sheet = `:host{
+sheet.replace = `:host{
     background-color: red;
     display: grid;
     gap: 8px;
