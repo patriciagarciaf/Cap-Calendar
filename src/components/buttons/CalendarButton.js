@@ -1,12 +1,13 @@
 import pubSub from "../../service/PubSub.js";
 import { CHANNELS } from "../../service/Config.js";
-import css from "./ButtonsStyle.css.js"
-import cssbase from '../baseDateComponent/baseDateComponent.css.js';
-
+import css from './ButtonsStyle.css.js';
+//import cssbase from '../core/componentDateBase.css.js';
+ 
 const BUTTON = Object.freeze({
     UP: 1,
     DOWN: -1
 })
+ 
 const ACTION_IS_NULL = "action no contiene un valor correcto";
  
 export class CalendarButton extends HTMLElement {
@@ -53,7 +54,7 @@ export class CalendarButton extends HTMLElement {
     static get observedAttributes() { return ['action']; }
  
     _getStyle(){
-        this._shadow.adoptedStyleSheets = [cssbase, css];
+        this._shadow.adoptedStyleSheets = [css];
     }
 }
  
