@@ -40,9 +40,9 @@ export class BaseDateComponent extends HTMLElement{
     _setStyle(){
         throw METHOD_NOT_IMPLEMENTED;
     }
-    _isThereStyle(){
-        return true;
-    }
+    // _isThereStyle(){
+    //     return true;
+    // }
     _changeDate(value){
         throw METHOD_NOT_IMPLEMENTED;
     }
@@ -50,10 +50,10 @@ export class BaseDateComponent extends HTMLElement{
         this._text = document.createTextNode("");
         this._shadow = this.attachShadow({mode: "open"});
         this._shadow.adoptedStyleSheets = [css];
-        if(this._isThereStyle()){
+        // if(this._isThereStyle()){
             this._setStyle();
             this._shadow.appendChild(this._text);
-        }
+        // }
     }
     _update(){
         this._text.data = this._formatDate();
