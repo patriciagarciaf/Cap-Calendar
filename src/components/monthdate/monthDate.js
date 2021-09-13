@@ -2,12 +2,13 @@ import { FormatService } from "../../service/FormatService.js";
 import { DateService } from "../../service/DateService.js";
 import { BaseDateComponent } from "../core/basedatecomponent.js";
 import pubSub from "../../service/PubSub.js";
-import { Mixin } from "../core/mixin.js";
 import { StyleComponent } from "../core/styleComponent.js";
 import css from "./monthDate.css.js";
 import { CHANNELS } from "../../service/Config.js";
+import {classMixin} from '../core/mixin.js'
 
-export class MonthDate extends Mixin(BaseDateComponent, StyleComponent){
+
+export class MonthDate extends classMixin(BaseDateComponent, StyleComponent){
     _formatDate() {
         return FormatService.getMonth(this.date);
     }

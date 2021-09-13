@@ -1,12 +1,11 @@
 import { CHANNELS } from "../../service/Config.js";
 import pubSub from "../../service/PubSub.js";
 import { BaseDateComponent } from "../core/basedatecomponent.js";
-import { Mixin } from "../core/mixin.js";
 import { StyleComponent } from "../core/styleComponent.js";
 import css from "./selectedDate.css.js";
+import {classMixin} from '../core/mixin.js'
 
-export class SelectedDate extends Mixin(BaseDateComponent, StyleComponent){
-
+export class SelectedDate extends classMixin(BaseDateComponent, StyleComponent){
     _formatDate() {
         return true;
     }

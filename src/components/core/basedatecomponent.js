@@ -37,31 +37,14 @@ export class BaseDateComponent extends HTMLElement{
         })
         this._disposables=[];
     }
-<<<<<<< HEAD:src/components/core/basedatecomponent.js
-=======
-    _setStyle(){
-        throw METHOD_NOT_IMPLEMENTED;
-    }
-    // _isThereStyle(){
-    //     return true;
-    // }
->>>>>>> main:src/components/baseDateComponent/basedatecomponent.js
     _changeDate(value){
         throw METHOD_NOT_IMPLEMENTED;
     }
     _create(){
         this._text = document.createTextNode("");
         this._shadow = this.attachShadow({mode: "open"});
-<<<<<<< HEAD:src/components/core/basedatecomponent.js
         StyleComponent.createStyle();
         this._shadow.appendChild(this._text);
-=======
-        this._shadow.adoptedStyleSheets = [css];
-        // if(this._isThereStyle()){
-            this._setStyle();
-            this._shadow.appendChild(this._text);
-        // }
->>>>>>> main:src/components/baseDateComponent/basedatecomponent.js
     }
     _update(){
         this._text.data = this._formatDate();
