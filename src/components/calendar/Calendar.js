@@ -46,9 +46,9 @@ export class Calendar extends HTMLElement{
             let div = document.createElement("div");
             let text = document.createTextNode(this._formatDate(element.date));
             div.appendChild(text);
-            div.addEventListener("click", ()=> pubSub.emit(CHANNELS.CHANGESELECDTEDDATE, element.date, false));
+            div.addEventListener("click", ()=> pubSub.emit(CHANNELS.CHANGESELECTEDDAY, element.date, false));
             div.addEventListener("click", ()=>{div.classList.add("selected")},false);
-            const disposable = pubSub.on(CHANNELS.CHANGESELECDTEDDATE, (element)=>{
+            const disposable = pubSub.on(CHANNELS.CHANGESELECTEDDAY, (element)=>{
                 div.classList.remove("selected"),
                 element.isSelected = false
             });
