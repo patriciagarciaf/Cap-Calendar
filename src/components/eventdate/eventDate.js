@@ -6,7 +6,7 @@ import sheet from './eventDate.css.js'
 class EventDate extends BaseDateComponent {
 
     connectedCallback() {
-        this._suscribe(CHANNELS.CHANGESELECTEDATE);
+        this._suscribe(CHANNELS.CHANGESELECTEDDAY);
     }
 
     _changeDate() {

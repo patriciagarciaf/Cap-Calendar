@@ -24,8 +24,10 @@ export class Calendar extends HTMLElement{
         this._shadow.appendChild(daysOfWeek);
         let calendar = document.createElement('cap-grid-calendar');
         this._shadow.appendChild(calendar);
-        let selectedDate = document.createElement('cap-event-date');
-        this._shadow.appendChild(selectedDate);
+        let eventDate = document.createElement('cap-event-date');
+        this._shadow.appendChild(eventDate);
+        // let selectedDate = document.createElement('cap-selected-date');
+        // this._shadow.appendChild(selectedDate);
     }
 } 
-customElements.define("cap-calendar", Calendar)  
+customElements.define("cap-calendar", Calendar);
