@@ -13,9 +13,9 @@ export class SelectedDate extends Mixin(BaseDateComponent, StyleComponent){
     _setStyle(){
         this._shadow.adoptedStyleSheets = [...this._shadow.adoptedStyleSheets, css];
     }
-    _changeDate() {
-        return true;
-    }
+    // _changeDate() {
+    //     return true;
+    // }
     connectedCallback() {
         const texto = super._create
         const disposableDate = pubSub.on(CHANNELS.CHANGEDATE, (date) => super._update(texto,date));

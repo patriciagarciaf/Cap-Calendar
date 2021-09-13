@@ -29,7 +29,7 @@ export class DateService {
     static addMonth(date, diff) {
 
         date.setMonth(date.getMonth() + diff)
-        returnDateService.getDayOfMonth(date);
+        return DateService.getDayOfMonth(date);
     }
     static isThisMonth(date, today) {
         return date.getMonth() === today.getMonth() &&
