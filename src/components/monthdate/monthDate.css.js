@@ -8,7 +8,7 @@ sheet.replace(`
     width: 14em;
 }
 :host(:hover) {
-    color: lightblue;
+    color: rgb(234, 99, 107);
 }
 `);
 export default sheet;
