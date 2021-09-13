@@ -29,7 +29,7 @@ export class CalendarButton extends HTMLElement {
  
         let button = document.createElement("button");     
         button.setAttribute("action", this._action);
-        button.appendChild(document.createTextNode("V"));
+        //button.appendChild(document.createTextNode("V"));
         this._shadow.appendChild(button);
     }
     _handlerClick(ev) {
