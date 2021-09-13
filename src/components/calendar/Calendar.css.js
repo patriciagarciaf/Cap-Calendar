@@ -16,11 +16,22 @@ sheet.replace(`:host{
                 :host .isToday{
                     background-color: rgb(300, 168, 180);
                 }
-                :host .selected{
-                    border-color: black;
-                }
+                
                 :host :hover{
                     color: rgb(234, 99, 107);
+                    box-sizing: border-box;
+                    border: 0.05em solid gray;
+                }
+                div{
+                    width: 1.3em;
+                    height: 1.3em;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                div.selected{
+                    box-sizing: border-box;
+                    border: 0.15em solid gray;
                 }
                 `
     );
