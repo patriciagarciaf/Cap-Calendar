@@ -1,10 +1,10 @@
 import { FormatService } from '../../service/FormatService.js'
-import pubSub from '../../service/PubSub.js'
-import { CHANNELS } from '../../service/Config.js'
 import sheet from './clock.css.js'
-import { BaseDateComponent } from '../baseDateComponent/basedatecomponent.js'
+import { Mixin } from "../core/mixin.js";
+import { StyleComponent } from "../core/styleComponent.js";
+import { BaseDateComponent } from '../core/basedatecomponent.js'
 
-export class Clock extends BaseDateComponent{
+export class Clock extends Mixin(BaseDateComponent, StyleComponent){
 
     _formatDate(){
         return FormatService.getTime(this._date)

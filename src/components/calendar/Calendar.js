@@ -3,7 +3,7 @@ import { FormatService } from "../../service/FormatService.js";
 import {CHANNELS} from "../../service/Config.js";
 import pubSub from "../../service/PubSub.js";
 import css from "./Calendar.css.js";
-import cssBase from '../baseDateComponent/baseDateComponent.css.js'
+import cssBase from '../core/baseDateComponent.css.js'
 
 
 export class Calendar extends HTMLElement{

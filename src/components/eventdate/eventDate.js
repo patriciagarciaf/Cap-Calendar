@@ -1,9 +1,11 @@
 import { FormatService } from "../../service/FormatService.js"
-import { BaseDateComponent } from "../baseDateComponent/basedatecomponent.js"
+import { BaseDateComponent } from "../core/basedatecomponent.js"
 import { CHANNELS } from '../../service/Config.js'
+import { Mixin } from "../core/mixin.js";
+import { StyleComponent } from "../core/styleComponent.js";
 import sheet from './eventDate.css.js'
 
-class EventDate extends BaseDateComponent {
+class EventDate extends Mixin(BaseDateComponent, StyleComponent) {
 
     connectedCallback() {
         this._suscribe(CHANNELS.CHANGESELECTEDDAY);

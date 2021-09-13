@@ -1,6 +1,6 @@
 import { DAYSOFWEEK } from "../../service/Config.js";
 import css from './daysOfWeek.css.js'
-import cssBase from '../baseDateComponent/baseDateComponent.css.js'
+import cssBase from '../core/baseDateComponent.css.js'
 
 export class DaysOfWeek extends HTMLElement{
     constructor(){

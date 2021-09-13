@@ -1,13 +1,14 @@
 import { CHANNELS } from "../../service/Config.js";
-import { FormatService } from "../../service/FormatService.js";
 import pubSub from "../../service/PubSub.js";
-import { BaseDateComponent } from "../baseDateComponent/basedatecomponent.js";
+import { BaseDateComponent } from "../core/basedatecomponent.js";
+import { Mixin } from "../core/mixin.js";
+import { StyleComponent } from "../core/styleComponent.js";
 import css from "./selectedDate.css.js";
 
-export class SelectedDate extends BaseDateComponent{
+export class SelectedDate extends Mixin(BaseDateComponent, StyleComponent){
 
     _formatDate() {
-        return FormatService.getSelectedDate(this.date);
+        return true;
     }
     _setStyle(){
         this._shadow.adoptedStyleSheets = [...this._shadow.adoptedStyleSheets, css];
