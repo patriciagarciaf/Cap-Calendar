@@ -4,22 +4,24 @@ sheet.replace(`:host{
                     font-size: 1.2em;
                     display: grid;
                     padding: 1em 1.3em;
-                    gap: 0.8em 2em;
-                    grid-template-columns: repeat(7,1em);
+                    gap: 0.8em 1.4em;
+                    grid-template-columns: repeat(7,1.5em);
                     text-align: center;
                     cursor: default;
+                    font-family: sans-serif;
                 }
                 :host .isNotMonth{
-                    color: darkgrey;
+                    color: rgb(150, 150, 150);
                 }
                 :host .isToday{
-                    background-color:lightblue;
+                    background-color: rgb(300, 168, 180);
                 }
                 :host .selected{
                     border-color: black;
                 }
                 :host :hover{
-                    color: lightblue;
-                }`
+                    color: rgb(234, 99, 107);
+                }
+                `
     );
 export default sheet;
