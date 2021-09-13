@@ -1,7 +1,7 @@
-import { CHANNELS } from "../../service/Config";
-import { FormatService } from "../../service/FormatService";
-import pubSub from "../../service/PubSub";
-import { BaseDateComponent } from "../baseDateComponent/basedatecomponent";
+import { CHANNELS } from "../../service/Config.js";
+import { FormatService } from "../../service/FormatService.js";
+import pubSub from "../../service/PubSub.js";
+import { BaseDateComponent } from "../baseDateComponent/basedatecomponent.js";
 import css from "./selectedDate.css.js";
 
 export class SelectedDate extends BaseDateComponent{
@@ -17,12 +17,8 @@ export class SelectedDate extends BaseDateComponent{
     }
     connectedCallback() {
         const texto = super._create
-        const disposableDate = pubSub.on(CHANNELS.CHANGEDATE, (date) => {
-             if (!DateService.isThisMonth(date, new Date())) {
-                 super._update(texto,date)
-             }
-         })
-        this._disposables.push(disposableDate, disposableMonth);
+        const disposableDate = pubSub.on(CHANNELS.CHANGEDATE, (date) => super._update(texto,date));
+        this._disposables.push(disposableDate);
     }
 }
-customElements.define('cap-selected-date', MonthDate);
+customElements.define('cap-selected-date', SelectedDate);
