@@ -1,6 +1,5 @@
 import {DateService} from './DateService.js'
 export class FormatService{
-
     static getTime(date){
         const timeOptions = {
             hour: '2-digit',

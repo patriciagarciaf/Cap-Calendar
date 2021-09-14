@@ -4,6 +4,5 @@ sheet.replace(`:host{
     cursor: default;
     width: 26em;
     background-color: rgb(248, 206, 206);
-
 }`)
 export default sheet

@@ -25,8 +25,7 @@ export class CalendarButton extends HTMLElement {
         this._action = value;
     }
     _create(){
- 
-        let button = document.createElement("button");     
+        let button = document.createElement("button");
         button.setAttribute("action", this._action);
         this._shadow.appendChild(button);
     }
@@ -35,7 +34,7 @@ export class CalendarButton extends HTMLElement {
         pubSub.emit(CHANNELS.CHANGEMONTH, this.action);
     }
     connectedCallback() {
-        this.addEventListener("click", this._handlerClick);        
+        this.addEventListener("click", this._handlerClick);
     }
     disconnectedCallback() {
         this.removeEventListener("click", this._handlerClick);
@@ -49,11 +48,11 @@ export class CalendarButton extends HTMLElement {
             throw ACTION_IS_NULL;
         }
         this.action = action;
-        this._getStyle();
+        this._setStyle();
         this._create();
     }
     static get observedAttributes() { return ['action']; }
-    _getStyle(){
+    _setStyle(){
         this._shadow.adoptedStyleSheets = [css];
     }
 }

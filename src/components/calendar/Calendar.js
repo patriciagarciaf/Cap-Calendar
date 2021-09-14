@@ -60,8 +60,11 @@ export class Calendar extends HTMLElement{
                 div.classList.add("isToday");
             }
             this._shadow.appendChild(div);
-            this._shadow.adoptedStyleSheets = [cssBase, css];
+            this._setStyle();
         })
+    }
+    _setStyle(){
+        this._shadow.adoptedStyleSheets = [cssBase, css];
     }
     _update(){
         while (this._shadow.firstChild) {

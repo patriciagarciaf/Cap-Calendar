@@ -1,6 +1,4 @@
 import { FormatService } from '../../service/FormatService.js'
-import pubSub from '../../service/PubSub.js'
-import { CHANNELS } from '../../service/Config.js'
 import sheet from './clock.css.js'
 import { BaseDateComponent } from '../baseDateComponent/basedatecomponent.js'
 
