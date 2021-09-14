@@ -8,18 +8,11 @@ class EventDate extends BaseDateComponent {
     connectedCallback() {
         this._suscribe(CHANNELS.CHANGESELECTEDDAY);
     }
-
-    _changeDate() {
-        return true;
-    }
-
     _formatDate() {
         return FormatService.getSelectedDate(this.date);
     }
     _setStyle(){
         this._shadow.adoptedStyleSheets = [...this._shadow.adoptedStyleSheets, sheet];
     }
-
 }
-
-window.customElements.define("cap-event-date", EventDate);
+customElements.define("cap-event-date", EventDate);

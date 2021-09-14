@@ -12,12 +12,10 @@ export class Calendar extends HTMLElement{
         this.date = new Date();
         this._shadow = this.attachShadow({mode:"open"});
         this._disposables = [];
-
     }
     _formatDate (date){
         return FormatService.getDay(date);
     }
-
     connectedCallback(){
         this._create();
         const disposable = pubSub.on(CHANNELS.CHANGEMONTH, (diff) => {
@@ -38,7 +36,6 @@ export class Calendar extends HTMLElement{
             disposable && disposable();
         })
     }
-
     _create(){
         let elements = [];
         elements = DateService.getMonthDays(this.date);
@@ -66,14 +63,12 @@ export class Calendar extends HTMLElement{
             this._shadow.adoptedStyleSheets = [cssBase, css];
         })
     }
-
     _update(){
         while (this._shadow.firstChild) {
             this._shadow.removeChild(this._shadow.lastChild);
         }
         this._create();
     }
-
     _removeChildren(){
         this._shadow.textContent="";
     }

@@ -1,8 +1,7 @@
 import pubSub from "../../service/PubSub.js";
 import { CHANNELS } from "../../service/Config.js";
 import css from './ButtonsStyle.css.js';
-//import cssbase from '../core/componentDateBase.css.js';
- 
+
 const BUTTON = Object.freeze({
     UP: 1,
     DOWN: -1
@@ -29,7 +28,6 @@ export class CalendarButton extends HTMLElement {
  
         let button = document.createElement("button");     
         button.setAttribute("action", this._action);
-        //button.appendChild(document.createTextNode("V"));
         this._shadow.appendChild(button);
     }
     _handlerClick(ev) {
@@ -55,10 +53,8 @@ export class CalendarButton extends HTMLElement {
         this._create();
     }
     static get observedAttributes() { return ['action']; }
- 
     _getStyle(){
         this._shadow.adoptedStyleSheets = [css];
     }
 }
- 
 customElements.define("cap-button", CalendarButton);

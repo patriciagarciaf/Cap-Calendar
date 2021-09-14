@@ -9,15 +9,12 @@ export class MonthDate extends BaseDateComponent{
     _formatDate() {
         return FormatService.getMonth(this.date);
     }
-
     _changeDate(value) {
         return !this.date || !DateService.isThisMonth(value, this._oldDate);
     }
-
     _setStyle() {
         this._shadow.adoptedStyleSheets = [...this._shadow.adoptedStyleSheets, css];
     }
-
     connectedCallback() {
         const texto = super._create
         const disposableDate = pubSub.on(CHANNELS.CHANGEDATE, (date) => {

@@ -26,8 +26,6 @@ export class Calendar extends HTMLElement{
         this._shadow.appendChild(calendar);
         let eventDate = document.createElement('cap-event-date');
         this._shadow.appendChild(eventDate);
-        // let selectedDate = document.createElement('cap-selected-date');
-        // this._shadow.appendChild(selectedDate);
     }
 } 
 customElements.define("cap-calendar", Calendar);
