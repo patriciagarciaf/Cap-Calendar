@@ -15,7 +15,6 @@ export class DateService {
             }
             return calendar;
         }
-
         function getFirstDayCalendar(date) {
             let firstDay = new Date(date);
             firstDay.setDate(1);
@@ -25,11 +24,6 @@ export class DateService {
             return firstDay;
         }
         return calendarMonth(date);
-    }
-    static addMonth(date, diff) {
-
-        date.setMonth(date.getMonth() + diff)
-        return DateService.getDayOfMonth(date);
     }
     static isThisMonth(date, today) {
         return date.getMonth() === today.getMonth() &&

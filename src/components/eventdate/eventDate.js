@@ -8,6 +8,9 @@ class EventDate extends BaseDateComponent {
     connectedCallback() {
         this._suscribe(CHANNELS.CHANGESELECTEDDAY);
     }
+    _changeDate() {
+        return true;
+    }
     _formatDate() {
         return FormatService.getSelectedDate(this.date);
     }

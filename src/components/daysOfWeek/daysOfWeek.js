@@ -8,7 +8,6 @@ export class DaysOfWeek extends HTMLElement{
         this._shadow=this.attachShadow({mode:"open"});
         this._create();
     }
-    
     _create(){
         this._shadow.adoptedStyleSheets = [cssBase, css];
         DAYSOFWEEK.forEach(element => {
