@@ -5,7 +5,7 @@ sheet.replace(`
     display: block;
     font-size: 1.2em;
     border-bottom: 0.05em solid white;
-    padding: 1em 0.5em;
+    padding: 1em;
     cursor: pointer;
     }
 :host(:hover) {

@@ -3,7 +3,7 @@ sheet.replace(`
 :host {
     font-size: 1.1rem;
     display: block;
-    padding: 1em 0.5em;
+    padding: 1em;
 }
 `);
 export default sheet;
